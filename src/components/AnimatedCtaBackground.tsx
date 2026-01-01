@@ -1,54 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Transition } from "framer-motion";
 
-type Layer = {
-  initial: {
-    x: string;
-    y: string;
-    scale: number;
-  };
-  animate: {
-    x: string;
-    y: string;
-  };
-  transition: {
-    duration: number;
-    repeat: number;
-    repeatType: "mirror";
-    ease: "easeInOut";
-  };
+const layers: Array<{
+  initial: { x: string; y: string; scale: number };
+  animate: { x: string; y: string };
+  transition: Transition;
   opacity: number;
-};
-
-const layers: Layer[] = [
+}> = [
   {
-    initial: { x: "-5%", y: "-5%", scale: 1.1 },
-    animate: { x: "5%", y: "5%" },
+    initial: { x: "-5%", y: "5%", scale: 1.15 },
+    animate: { x: "5%", y: "-5%" },
     transition: {
-      duration: 20,
+      duration: 22,
       repeat: Infinity,
       repeatType: "mirror",
       ease: "easeInOut",
     },
-    opacity: 0.8,
+    opacity: 0.7,
   },
   {
-    initial: { x: "5%", y: "5%", scale: 1.2 },
-    animate: { x: "-5%", y: "-5%" },
+    initial: { x: "5%", y: "-5%", scale: 1.25 },
+    animate: { x: "-5%", y: "5%" },
     transition: {
-      duration: 25,
+      duration: 28,
       repeat: Infinity,
       repeatType: "mirror",
       ease: "easeInOut",
     },
-    opacity: 0.6,
+    opacity: 0.5,
   },
   {
-    initial: { x: "0%", y: "10%", scale: 1.05 },
-    animate: { x: "0%", y: "-10%" },
+    initial: { x: "2%", y: "-8%", scale: 1.1 },
+    animate: { x: "-2%", y: "8%" },
     transition: {
-      duration: 30,
+      duration: 35,
       repeat: Infinity,
       repeatType: "mirror",
       ease: "easeInOut",
@@ -57,13 +44,13 @@ const layers: Layer[] = [
   },
 ];
 
-export default function AnimatedHeroBackground() {
+const AnimatedCtaBackground = () => {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
       {layers.map((layer, index) => (
         <motion.div
           key={index}
-          className="absolute inset-[-10%] w-[120%] h-[120%]"
+          className="absolute inset-[-15%] w-[130%] h-[130%]"
           initial={layer.initial}
           animate={layer.animate}
           transition={layer.transition}
@@ -77,4 +64,6 @@ export default function AnimatedHeroBackground() {
       ))}
     </div>
   );
-}
+};
+
+export default AnimatedCtaBackground;

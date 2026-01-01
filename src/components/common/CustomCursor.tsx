@@ -12,7 +12,8 @@ const CustomCursor = () => {
       y: y - 8,
       height: 16,
       width: 16,
-      backgroundColor: "#9372FF", // Updated to the new purple
+      backgroundColor: "#3b82f6", // Updated to the new blue
+      // backgroundColor: "#9372FF", // Updated to the new purple
       mixBlendMode: "difference",
     },
   };

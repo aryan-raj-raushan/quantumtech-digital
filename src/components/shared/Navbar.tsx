@@ -89,7 +89,7 @@ const Navbar = () => {
               width={150}
               height={50}
               priority
-              className="w-40"
+              className="w-60"
             />
           </Link>
           <nav className="hidden md:flex items-center gap-8">

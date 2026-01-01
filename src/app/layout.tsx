@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/common/CustomCursor";
 import Navbar from "@/components/shared/Navbar";
+import { Toaster } from "sonner";
+import Footer from "@/components/shared/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +28,101 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* organisation */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Quantumtech Digital",
+              url: "https://www.quantumtechdigital.com",
+              description:
+                "Quantumtech Digital is a website development and digital marketing agency helping businesses grow online across India.",
+              founder: {
+                "@type": "Person",
+                name: "Aryan Raj",
+                sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
+              },
+              sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
+            }),
+          }}
+        />
+
+        {/* Local Business Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Quantumtech Digital",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Biharsharif",
+                addressRegion: "Bihar",
+                postalCode: "803101",
+                addressCountry: "IN",
+              },
+              areaServed: [
+                {
+                  "@type": "City",
+                  name: "Biharsharif",
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Nalanda",
+                },
+                {
+                  "@type": "City",
+                  name: "Patna",
+                },
+                {
+                  "@type": "City",
+                  name: "Gurugram",
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Delhi NCR",
+                },
+                {
+                  "@type": "State",
+                  name: "Bihar",
+                },
+                {
+                  "@type": "State",
+                  name: "West Bengal",
+                },
+                {
+                  "@type": "State",
+                  name: "Uttar Pradesh",
+                },
+                {
+                  "@type": "Country",
+                  name: "India",
+                },
+              ],
+
+              url: "https://www.quantumtechdigital.com",
+              priceRange: "₹4999+",
+              founder: {
+                "@type": "Person",
+                name: "Aryan Raj",
+                sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
+              },
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         <CustomCursor />
         {children}
+        <Toaster position="top-right" richColors />
+        <Footer />
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import Portfolio from "@/components/Portfolio";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
 import TrustedClients from "@/components/TrustedClients";
+import { domain_url } from "@/constants/api";
 
 export const metadata = {
   title:
@@ -40,7 +41,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://www.quantumtechdigital.com/",
+    canonical: `${domain_url}/`,
   },
 
   openGraph: {
@@ -48,13 +49,13 @@ export const metadata = {
       "Best Website Development Company in Biharsharif | Quantumtech Digital",
     description:
       "Looking for website development in Biharsharif? Quantumtech Digital helps local businesses grow online with websites, apps, SEO & marketing.",
-    url: "https://www.quantumtechdigital.com/",
+    url: `${domain_url}/`,
     siteName: "Quantumtech Digital",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.quantumtechdigital.com/logo.png",
+        url: `${domain_url}/logo.png`,
         width: 1200,
         height: 630,
         alt: "Quantumtech Digital - Website Development in Biharsharif",
@@ -67,7 +68,7 @@ export const metadata = {
     title: "Quantumtech Digital | Website Development in Biharsharif, Bihar",
     description:
       "Best website & SEO service provider in Biharsharif, Nalanda. Affordable plans starting from ₹4999.",
-    images: ["https://www.quantumtechdigital.com/service.png"],
+    images: [`${domain_url}/service.png`],
   },
 
   category: "Digital Services",

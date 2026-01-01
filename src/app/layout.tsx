@@ -5,6 +5,7 @@ import CustomCursor from "@/components/common/CustomCursor";
 import Navbar from "@/components/shared/Navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/shared/Footer";
+import { domain_url } from "@/constants/api";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* website schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Quantumtech Digital",
+              alternateName: "Quantumtech",
+              url: `${domain_url}/`,
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${domain_url}/search?q={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+
         {/* organisation */}
         <script
           type="application/ld+json"
@@ -37,7 +57,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Quantumtech Digital",
-              url: "https://www.quantumtechdigital.com",
+              url: `${domain_url}`,
               description:
                 "Quantumtech Digital is a website development and digital marketing agency helping businesses grow online across India.",
               founder: {
@@ -104,7 +124,7 @@ export default function RootLayout({
                 },
               ],
 
-              url: "https://www.quantumtechdigital.com",
+              url: `${domain_url}`,
               priceRange: "₹4999+",
               founder: {
                 "@type": "Person",

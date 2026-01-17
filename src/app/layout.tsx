@@ -42,95 +42,40 @@ export default function RootLayout({
               url: `${domain_url}/`,
               potentialAction: {
                 "@type": "SearchAction",
-                target: `${domain_url}/search?q={search_term_string}`,
+                target: `${domain_url}/?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),
           }}
         />
 
-        {/* organisation */}
+        {/* global business */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": `${domain_url}/#organization`,
               name: "Quantumtech Digital",
-              url: `${domain_url}`,
+              url: `${domain_url}/`,
+              logo: `${domain_url}/logo.png`,
               description:
-                "Quantumtech Digital is a website development and digital marketing agency helping businesses grow online across India.",
+                "Quantumtech Digital is a leading IT services and website development company in India, providing web development, SEO, and digital marketing solutions across all Indian cities.",
+              foundingDate: "2024",
               founder: {
                 "@type": "Person",
                 name: "Aryan Raj",
                 sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
               },
-              sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
-            }),
-          }}
-        />
-
-        {/* Local Business Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Quantumtech Digital",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Biharsharif",
-                addressRegion: "Bihar",
-                postalCode: "803101",
-                addressCountry: "IN",
+              areaServed: {
+                "@type": "Country",
+                name: "India",
               },
-              areaServed: [
-                {
-                  "@type": "City",
-                  name: "Biharsharif",
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  name: "Nalanda",
-                },
-                {
-                  "@type": "City",
-                  name: "Patna",
-                },
-                {
-                  "@type": "City",
-                  name: "Gurugram",
-                },
-                {
-                  "@type": "AdministrativeArea",
-                  name: "Delhi NCR",
-                },
-                {
-                  "@type": "State",
-                  name: "Bihar",
-                },
-                {
-                  "@type": "State",
-                  name: "West Bengal",
-                },
-                {
-                  "@type": "State",
-                  name: "Uttar Pradesh",
-                },
-                {
-                  "@type": "Country",
-                  name: "India",
-                },
+              sameAs: [
+                "https://www.linkedin.com/company/quantumtech-digital",
+                // add Instagram / Twitter later if needed
               ],
-
-              url: `${domain_url}`,
-              priceRange: "₹4999+",
-              founder: {
-                "@type": "Person",
-                name: "Aryan Raj",
-                sameAs: ["https://www.linkedin.com/in/aryan-raj-raushan/"],
-              },
             }),
           }}
         />

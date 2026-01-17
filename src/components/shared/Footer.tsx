@@ -97,7 +97,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} AGENCY. All Rights Reserved.</p>
+          <p>
+            &copy; 2024-{new Date().getFullYear()} Quantumtech Digital. All
+            Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

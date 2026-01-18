@@ -20,7 +20,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10">
       <AnimatedHeroBackground />
       <div className="absolute inset-0 bg-black/40"></div>{" "}
       {/* Adjusted overlay opacity */}
@@ -39,7 +39,8 @@ export default function Hero() {
               Award-Winning Creative Agency
             </span>
           </motion.div>
-          <motion.h1
+          <h1 className="sr-only">Quantumtech Digital</h1>
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -47,7 +48,7 @@ export default function Hero() {
           >
             Transform Your
             <span className="block text-accent-purple">Brand Story</span>
-          </motion.h1>
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

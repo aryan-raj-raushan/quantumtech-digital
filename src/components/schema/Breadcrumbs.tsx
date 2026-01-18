@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Breadcrumbs({ city }: any) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white">
+    <nav aria-label="Breadcrumb" className="mb-6 text-xs text-gray-200">
       <ol className="flex gap-2 flex-wrap">
         <li>
           <Link href="/">Home</Link>

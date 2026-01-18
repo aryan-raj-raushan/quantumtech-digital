@@ -31,15 +31,17 @@ export const getReviewSchema = (city: any) =>
   }));
 export default function CitySchemas({ city }: Props) {
   const pageUrl = `${domain_url}/${city.slug}/it-services`;
+  const reviews = getReviewSchema(city);
 
   const schemas = [
-    /* 1️⃣ LocalBusiness */
+    /* 1️⃣ LocalBusiness (PRIMARY ENTITY) */
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": `${pageUrl}#localbusiness`,
       name: "Quantumtech Digital",
       url: pageUrl,
+      description: `Quantumtech Digital is a website development and IT services company in ${city.name}, ${city.state}, offering web development, web design, mobile app development, SEO, and digital marketing solutions.`,
       priceRange: "₹4999+",
       parentOrganization: {
         "@id": `${domain_url}/#organization`,
@@ -50,21 +52,21 @@ export default function CitySchemas({ city }: Props) {
         addressRegion: city.state,
         addressCountry: "IN",
       },
-      review: getReviewSchema(city),
+      review: reviews,
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: (
-          getReviewSchema(city).reduce(
+          reviews.reduce(
             (sum, r) => sum + Number(r.reviewRating.ratingValue),
             0,
-          ) / getReviewSchema(city).length
+          ) / reviews.length
         ).toFixed(1),
-        reviewCount: getReviewSchema(city).length,
+        reviewCount: reviews.length,
         bestRating: "5",
       },
     },
 
-    /* 2️⃣ BreadcrumbList (FIXED) */
+    /* 2️⃣ BreadcrumbList (NOT IT-ONLY) */
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -78,13 +80,7 @@ export default function CitySchemas({ city }: Props) {
         {
           "@type": "ListItem",
           position: 2,
-          name: "IT Services",
-          item: `${domain_url}/it-services`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: `IT Services in ${city.name}`,
+          name: `Website Development & IT Services in ${city.name}`,
           item: pageUrl,
         },
       ],
@@ -103,11 +99,21 @@ export default function CitySchemas({ city }: Props) {
         },
       })),
     },
-    /* 4️⃣ Service */
+
+    /* 4️⃣ Service (MULTI-SERVICE, CONNECTED) */
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      serviceType: "IT Services",
+      "@id": `${pageUrl}#services`,
+      name: `Website Development & Digital Services in ${city.name}`,
+      serviceType: [
+        "Website Development",
+        "Web Design",
+        "Mobile App Development",
+        "IT Services",
+        "SEO Services",
+        "Digital Marketing",
+      ],
       provider: {
         "@id": `${domain_url}/#organization`,
       },
@@ -124,13 +130,15 @@ export default function CitySchemas({ city }: Props) {
         availability: "https://schema.org/InStock",
       },
     },
-    // 4️⃣ WebPage Schema
+
+    /* 5️⃣ WebPage (ALIGNED WITH H1) */
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: `IT Services in ${city.name}`,
-      url: `${domain_url}/${city.slug}/it-services`,
-      description: `Professional IT services in ${city.name} including web development, SEO, and digital marketing.`,
+      "@id": `${pageUrl}#webpage`,
+      name: `Website Development & IT Services Company in ${city.name}`,
+      url: pageUrl,
+      description: `Looking for the best website development company in ${city.name}? Quantumtech Digital provides web development, mobile app development, SEO, and digital marketing services.`,
       inLanguage: "en-IN",
       isPartOf: {
         "@id": `${domain_url}/#website`,

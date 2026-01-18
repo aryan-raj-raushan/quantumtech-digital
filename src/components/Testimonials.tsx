@@ -51,10 +51,16 @@ const Testimonials = () => {
     <section id="testimonials" className="py-24 bg-[#0C0D0D] overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight uppercase max-w-lg">
-            People who <span className="text-accent-purple">changed</span> how
-            they do business
-          </h2>
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight uppercase max-w-xl">
+              What Our <span className="text-accent-purple">Clients</span> Say
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight  max-w-lg">
+              People who <span className="text-accent-purple">changed</span> how
+              they do business
+            </p>
+          </div>
+
           <div className="hidden md:flex gap-4">
             <button
               onClick={() => scroll("left")}

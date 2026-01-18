@@ -1,4 +1,10 @@
-import { getCityBySlug, getAllCities, getCitiesByState } from "@/utils/city";
+import {
+  getCityBySlug,
+  getAllCities,
+  getCitiesByState,
+  formatServiceTitle,
+  getCityAnchorText,
+} from "@/utils/city";
 import { Metadata } from "next";
 import CTA from "@/components/CTA";
 import { domain_url } from "@/constants/api";
@@ -28,8 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!cityDetails) return {};
 
-  const title = `IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
-  const description = `Quantumtech Digital is a trusted IT services company in ${cityDetails.name}, ${cityDetails.state}. We offer website development, SEO, digital marketing, and software solutions for businesses.`;
+  const title = `Website Development & IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
+
+  const description = `Quantumtech Digital is a leading website development and IT services company in ${cityDetails.name}, ${cityDetails.state}. We specialize in web development, web design, mobile app development, SEO, and digital marketing solutions for businesses and startups.`;
 
   const url = `${domain_url}/${cityDetails.slug}/it-services`;
 
@@ -76,9 +83,11 @@ export default async function Page({ params }: Props) {
       <section className="pt-28 pb-20 text-center container mx-auto px-6">
         <Breadcrumbs city={cityDetails} />
 
-        <h1 className="text-5xl font-bold leading-tight">
-          IT Services & Website Development in{" "}
-          <span className="text-blue-500">{cityDetails.name}</span>
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight text-center">
+          Website Development & IT Services
+          <span className="block mt-2">
+            Company in <span className="text-blue-500">{cityDetails.name}</span>
+          </span>
         </h1>
 
         <p className="mt-6 max-w-3xl mx-auto text-gray-300">
@@ -93,6 +102,40 @@ export default async function Page({ params }: Props) {
           <Button>View Our Work</Button>
         </div>
       </section>
+
+      <section className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-semibold text-center">
+          Website Development Company in {cityDetails.name}
+        </h2>
+
+        <p className="mt-4 max-w-5xl mx-auto text-center text-gray-300">
+          Quantumtech Digital is a trusted website development company in{" "}
+          {cityDetails.name}, delivering modern, fast, mobile-friendly, and
+          SEO-optimized websites. We help startups, small businesses, and
+          enterprises build a strong online presence with scalable and
+          conversion-focused web solutions.
+        </p>
+
+        <p className="mt-4 max-w-5xl mx-auto text-center text-gray-400">
+          If you are looking for the best website development company in{" "}
+          {cityDetails.name}, our expert team builds business websites,
+          eCommerce platforms, landing pages, and custom web applications
+          tailored to your goals.
+        </p>
+      </section>
+      {/* Mobile app section */}
+      <section className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-semibold text-center">
+          Mobile App Development Company in {cityDetails.name}
+        </h2>
+
+        <p className="mt-4 max-w-4xl mx-auto text-center text-gray-300">
+          We provide end-to-end mobile app development services in{" "}
+          {cityDetails.name}, building secure and scalable Android and iOS
+          applications for startups and enterprises.
+        </p>
+      </section>
+
       {/* service details */}
       <section className="container mx-auto px-6 py-16">
         <h3 className="text-3xl font-semibold text-center">
@@ -109,8 +152,8 @@ export default async function Page({ params }: Props) {
           {services.map((service) => (
             <ServiceCard
               key={service.title}
-              title={service.title}
-              description={service.desc}
+              title={formatServiceTitle(service.title, cityDetails.name)}
+              description={`${service.desc} We provide this service in ${cityDetails.name}.`}
               icon={service.icon}
             />
           ))}
@@ -134,13 +177,13 @@ export default async function Page({ params }: Props) {
         <div className="mt-6 flex flex-wrap gap-3">
           {getCitiesByState(cityDetails.state)
             .filter((c) => c.slug !== cityDetails.slug)
-            .map((city) => (
+            .map((city, index) => (
               <Link
                 key={city.slug}
                 href={`/${city.slug}/it-services`}
                 className="px-4 py-2 bg-neutral-800 rounded-full text-sm hover:bg-blue-700"
               >
-                IT Services in {city.name}
+                {getCityAnchorText(city.name, index)}
               </Link>
             ))}
         </div>

@@ -29,7 +29,7 @@ const AnimatedCounter = ({ to, suffix }: any) => {
         setCount(
           isDecimal
             ? parseFloat(currentCount.toFixed(1))
-            : Math.ceil(currentCount)
+            : Math.ceil(currentCount),
         );
       }
     }, interval);
@@ -87,7 +87,7 @@ const Stats = ({ customStats }: any) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase">
-                OUR <span className="text-accent-purple">RESULTS</span>
+                Our <span className="text-accent-purple">Results</span>
               </h2>
             </div>
             <div className="flex items-end">

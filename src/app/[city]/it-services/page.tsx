@@ -4,6 +4,7 @@ import {
   getCitiesByState,
   formatServiceTitle,
   getCityAnchorText,
+  formatServiceDescription,
 } from "@/utils/city";
 import { Metadata } from "next";
 import CTA from "@/components/CTA";
@@ -34,9 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!cityDetails) return {};
 
-  const title = `Website Development & IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
+  const title = `Best Website Development & IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
 
-  const description = `Quantumtech Digital is a leading website development and IT services company in ${cityDetails.name}, ${cityDetails.state}. We specialize in web development, web design, mobile app development, SEO, and digital marketing solutions for businesses and startups.`;
+  const description = `Quantumtech Digital is the best website development company in ${cityDetails.name}, ${cityDetails.state}. We are a top-rated web design and IT services company offering custom website development, mobile apps, SEO, and digital marketing for startups and businesses.`;
+
+  const ogTitle = `Top Website Development Company in ${cityDetails.name} – Quantumtech Digital`;
+
+  const ogDescription = `Looking for the best website development company in ${cityDetails.name}? We deliver modern websites, SEO, mobile apps, and digital marketing services to help businesses grow.`;
 
   const url = `${domain_url}/${cityDetails.slug}/it-services`;
 
@@ -46,6 +51,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     alternates: {
       canonical: url,
+      languages: {
+        "en-IN": url,
+        "x-default": url,
+      },
     },
 
     robots: {
@@ -54,8 +63,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
 
     openGraph: {
-      title,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       url,
       siteName: "Quantumtech Digital",
       locale: "en_IN",
@@ -64,8 +73,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: ogTitle,
+      description: ogDescription,
     },
   };
 }
@@ -83,14 +92,14 @@ export default async function Page({ params }: Props) {
       <section className="pt-28 pb-20 text-center container mx-auto px-6">
         <Breadcrumbs city={cityDetails} />
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight text-center">
-          Website Development & IT Services
-          <span className="block mt-2">
-            Company in <span className="text-blue-500">{cityDetails.name}</span>
+        <h1 className="text-4xl md:text-5xl font-bold text-center">
+          Best Website Development Company in {cityDetails.name}
+          <span className="block mt-2 text-lg text-gray-300">
+            Top-Rated IT & Web Design Services
           </span>
         </h1>
 
-        <p className="mt-6 max-w-3xl mx-auto text-gray-300">
+        <p className="mt-6 max-w-5xl mx-auto text-gray-300">
           Quantumtech Digital provides professional website development, mobile
           app development, SEO, and digital marketing services in{" "}
           {cityDetails.name}, helping businesses grow online with scalable and
@@ -99,30 +108,28 @@ export default async function Page({ params }: Props) {
 
         <div className="mt-8 flex justify-center gap-4">
           <Button>Get Free Consultation</Button>
-          <Button>View Our Work</Button>
+          <Button>View Website Projects</Button>
         </div>
       </section>
 
       <section className="container mx-auto px-6 py-12">
         <h2 className="text-3xl font-semibold text-center">
-          Website Development Company in {cityDetails.name}
+          Custom Website Development Services in {cityDetails.name}
         </h2>
 
         <p className="mt-4 max-w-5xl mx-auto text-center text-gray-300">
-          Quantumtech Digital is a trusted website development company in{" "}
-          {cityDetails.name}, delivering modern, fast, mobile-friendly, and
-          SEO-optimized websites. We help startups, small businesses, and
-          enterprises build a strong online presence with scalable and
-          conversion-focused web solutions.
+          As a leading web development agency in {cityDetails.name}, Quantumtech
+          Digital designs and develops fast, secure, and SEO-friendly websites
+          tailored to your business goals.
         </p>
 
         <p className="mt-4 max-w-5xl mx-auto text-center text-gray-400">
-          If you are looking for the best website development company in{" "}
-          {cityDetails.name}, our expert team builds business websites,
-          eCommerce platforms, landing pages, and custom web applications
-          tailored to your goals.
+          Our website development services include business websites, eCommerce
+          stores, landing pages, and custom web applications built to convert
+          visitors into customers.
         </p>
       </section>
+
       {/* Mobile app section */}
       <section className="container mx-auto px-6 py-12">
         <h2 className="text-3xl font-semibold text-center">
@@ -133,6 +140,25 @@ export default async function Page({ params }: Props) {
           We provide end-to-end mobile app development services in{" "}
           {cityDetails.name}, building secure and scalable Android and iOS
           applications for startups and enterprises.
+        </p>
+      </section>
+
+      <section className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-semibold text-center">
+          Why We Are the Best Website Development Company in {cityDetails.name}
+        </h2>
+
+        <p className="mt-4 max-w-5xl mx-auto text-center text-gray-300">
+          Quantumtech Digital is recognized as one of the top website
+          development companies in {cityDetails.name}. Our team of expert web
+          developers and designers build fast, secure, and SEO-optimized
+          websites that help businesses generate leads and grow revenue.
+        </p>
+
+        <p className="mt-4 max-w-5xl mx-auto text-center text-gray-400">
+          If you are searching for the best web development company in{" "}
+          {cityDetails.name} or a trusted website design agency near you, we
+          deliver custom solutions tailored to your business goals.
         </p>
       </section>
 
@@ -153,7 +179,11 @@ export default async function Page({ params }: Props) {
             <ServiceCard
               key={service.title}
               title={formatServiceTitle(service.title, cityDetails.name)}
-              description={`${service.desc} We provide this service in ${cityDetails.name}.`}
+              description={formatServiceDescription(
+                service.title,
+                cityDetails.name,
+                service.desc,
+              )}
               icon={service.icon}
             />
           ))}

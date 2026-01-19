@@ -23,17 +23,22 @@ export function getCitiesByState(state: string): City[] {
 export function formatServiceTitle(baseTitle: string, cityName: string) {
   switch (baseTitle) {
     case "Website Development":
-      return `Website Development in ${cityName}`;
+      return `Best Website Development Company in ${cityName}`;
+
     case "Web Design":
-      return `Web Design Services in ${cityName}`;
+      return `Top Web Design Services in ${cityName}`;
+
     case "Mobile App Development":
-      return `Mobile App Development in ${cityName}`;
+      return `Mobile App Development Company in ${cityName}`;
+
     case "Search Engine Optimization (SEO)":
-      return `SEO Services in ${cityName}`;
+      return `SEO Company in ${cityName}`;
+
     case "Digital Marketing":
-      return `Digital Marketing Services in ${cityName}`;
+      return `Digital Marketing Agency in ${cityName}`;
+
     default:
-      return `${baseTitle} in ${cityName}`;
+      return `Professional ${baseTitle} Services in ${cityName}`;
   }
 }
 
@@ -47,4 +52,23 @@ export function getCityAnchorText(cityName: string, index: number) {
   ];
 
   return anchors[index % anchors.length];
+}
+
+const websiteDescriptionVariations = (cityName: string) => [
+  `We are a leading website development company in ${cityName} delivering fast, secure, and scalable websites.`,
+  `Our team of top website developers in ${cityName} builds SEO-friendly and conversion-focused websites.`,
+  `Quantumtech Digital provides professional website development services in ${cityName} for businesses and startups.`,
+];
+
+export function formatServiceDescription(
+  baseTitle: string,
+  cityName: string,
+  defaultDesc: string,
+) {
+  if (baseTitle === "Website Development") {
+    const variations = websiteDescriptionVariations(cityName);
+    return variations[Math.floor(Math.random() * variations.length)];
+  }
+
+  return `${defaultDesc} We provide this service in ${cityName}.`;
 }

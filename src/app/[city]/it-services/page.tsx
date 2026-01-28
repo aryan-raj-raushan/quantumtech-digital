@@ -5,6 +5,7 @@ import {
   formatServiceTitle,
   getCityAnchorText,
   formatServiceDescription,
+  getCityLevel,
 } from "@/utils/city";
 import { Metadata } from "next";
 import CTA from "@/components/CTA";
@@ -35,9 +36,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!cityDetails) return {};
 
-  const title = `Best Website Development & IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
+  const level = getCityLevel(city);
 
-  const description = `Quantumtech Digital is the best website development company in ${cityDetails.name}, ${cityDetails.state}. We are a top-rated web design and IT services company offering custom website development, mobile apps, SEO, and digital marketing for startups and businesses.`;
+  const title =
+    level === "top"
+      ? `Top IT Services & Website Development Company in ${cityDetails.name} | Quantumtech Digital`
+      : level === "secondary" || level === "capital"
+        ? `Best IT Services & Website Development Company in ${cityDetails.name}`
+        : `Best Website Development & IT Services Company in ${cityDetails.name}, ${cityDetails.state} | Quantumtech Digital`;
+
+  const description =
+    level === "top"
+      ? `Quantumtech Digital is a leading IT services and website development company in ${cityDetails.name}, delivering high-performance websites, mobile apps, SEO, and digital marketing solutions for startups and enterprises.`
+      : `Quantumtech Digital is the best website development company in ${cityDetails.name}, ${cityDetails.state}. We are a top-rated web design and IT services company offering custom website development, mobile apps, SEO, and digital marketing for startups and businesses.`;
 
   const ogTitle = `Top Website Development Company in ${cityDetails.name} – Quantumtech Digital`;
 
@@ -82,6 +93,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { city } = await params;
   const cityDetails = getCityBySlug(city);
+  const level = getCityLevel(city);
+
   if (!cityDetails) return null;
 
   return (
@@ -89,7 +102,7 @@ export default async function Page({ params }: Props) {
       {/* schema */}
       <CitySchemas city={cityDetails} />
       {/* content */}
-      <section className="pt-28 pb-20 text-center container mx-auto px-6">
+      <section className="pt-28 pb-16 text-center container mx-auto px-6">
         <Breadcrumbs city={cityDetails} />
 
         <h1 className="text-4xl md:text-5xl font-bold text-center">
@@ -162,6 +175,142 @@ export default async function Page({ params }: Props) {
         </p>
       </section>
 
+      {(level === "top" || level === "secondary") && (
+        <section className="container mx-auto px-6 py-16 text-white">
+          <h2 className="text-3xl font-semibold text-center">
+            Industry-Focused IT Services in {cityDetails.name}
+          </h2>
+
+          <p className="mt-4 max-w-5xl mx-auto text-center text-gray-300">
+            {cityDetails.name} is home to diverse industries, startups, and
+            enterprises. We deliver tailored IT and digital solutions aligned
+            with industry-specific business needs.
+          </p>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">🚀 Startups & SaaS</h3>
+              <p className="text-gray-400 text-sm">
+                Scalable web, mobile, and cloud solutions for startups and SaaS
+                businesses to launch and grow faster.
+              </p>
+            </div>
+
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">
+                🏗️ Real Estate & Construction
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Custom websites, CRM integrations, and lead-generation platforms
+                for real estate and infrastructure companies.
+              </p>
+            </div>
+
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">
+                🛒 Retail & D2C Brands
+              </h3>
+              <p className="text-gray-400 text-sm">
+                eCommerce platforms, payment integrations, and performance
+                marketing solutions to drive online sales.
+              </p>
+            </div>
+
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">
+                📈 Local Service Businesses
+              </h3>
+              <p className="text-gray-400 text-sm">
+                SEO, websites, and digital marketing solutions for service
+                providers to generate consistent local leads.
+              </p>
+            </div>
+
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">
+                🏢 Enterprises & Corporates
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Secure, scalable enterprise-grade web and application
+                development with long-term technical support.
+              </p>
+            </div>
+            <div className="bg-neutral-900 border border-white/10 rounded-xl p-6 hover:border-accent-purple transition">
+              <h3 className="text-lg font-semibold mb-2">
+                🎓 Education & Healthcare
+              </h3>
+              <p className="text-gray-400 text-sm">
+                Digital platforms, ERP systems, and mobile apps for schools,
+                colleges, hospitals, and healthcare providers.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {level === "top" && (
+        <section className="container mx-auto px-6 py-16">
+          <h2 className="text-3xl font-semibold text-center">
+            Why Businesses in {cityDetails.name} Choose Quantumtech Digital
+          </h2>
+
+          <p className="mt-4 max-w-5xl mx-auto text-center text-gray-300">
+            As a trusted IT services company serving {cityDetails.name}, we help
+            fast-growing businesses build scalable digital products with
+            measurable ROI.
+          </p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              SEO-first development approach
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              Startup & enterprise experience
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              Transparent pricing & timelines
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              Dedicated project managers
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              PAN-India & remote delivery model
+            </div>
+            <div className="bg-neutral-900 p-6 rounded-lg">
+              Long-term technical support
+            </div>
+          </div>
+        </section>
+      )}
+
+      {level === "secondary" && (
+        <section className="container mx-auto px-6 py-16">
+          <h2 className="text-3xl font-semibold text-center">
+            Trusted IT Partner for Businesses in {cityDetails.name}
+          </h2>
+
+          <p className="mt-4 max-w-4xl mx-auto text-center text-gray-300">
+            We work with growing businesses in {cityDetails.name}, delivering
+            reliable website development, mobile apps, SEO, and digital
+            marketing solutions to support long-term growth.
+          </p>
+        </section>
+      )}
+
+      {level === "top" && (
+        <section className="container mx-auto px-6 py-16">
+          <h2 className="text-3xl font-semibold text-center">
+            Serving Businesses Across {cityDetails.name} & Nearby Areas
+          </h2>
+
+          <p className="mt-4 max-w-4xl mx-auto text-center text-gray-300">
+            We work with startups, SMEs, and enterprises across{" "}
+            {cityDetails.name} through our remote-first delivery model, ensuring
+            seamless communication, fast turnaround, and reliable support.
+          </p>
+        </section>
+      )}
+
       {/* service details */}
       <section className="container mx-auto px-6 py-16">
         <h3 className="text-3xl font-semibold text-center">
@@ -178,10 +327,11 @@ export default async function Page({ params }: Props) {
           {services.map((service) => (
             <ServiceCard
               key={service.title}
-              title={formatServiceTitle(service.title, cityDetails.name)}
+              title={formatServiceTitle(service.title, cityDetails.name, level)}
               description={formatServiceDescription(
                 service.title,
                 cityDetails.name,
+                level,
                 service.desc,
               )}
               icon={service.icon}
@@ -213,7 +363,7 @@ export default async function Page({ params }: Props) {
                 href={`/${city.slug}/it-services`}
                 className="px-4 py-2 bg-neutral-800 rounded-full text-sm hover:bg-blue-700"
               >
-                {getCityAnchorText(city.name, index)}
+                {getCityAnchorText(city.name, level, index)}
               </Link>
             ))}
         </div>

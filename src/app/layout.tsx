@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/Navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/shared/Footer";
 import { domain_url } from "@/constants/api";
+import TierCityServices from "@/components/shared/TierCityLinks";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +88,7 @@ export default function RootLayout({
         <CustomCursor />
         {children}
         <Toaster position="top-right" richColors />
+        <TierCityServices />
         <Footer />
       </body>
     </html>

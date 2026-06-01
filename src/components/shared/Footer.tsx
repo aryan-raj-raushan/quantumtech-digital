@@ -6,36 +6,50 @@ import { footerSections, socialLinks } from "@/constants/const";
 const Footer = () => {
   const router = useRouter();
 
-  const handleSocialClick = () => {
-    toast.info("Feature Not Implemented 🚧", {
-      description:
-        "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-    });
+  const handleSocialClick = (social: any) => {
+    if (social.url) {
+      window.open(social.url, "_blank");
+    } else {
+      toast.info("Feature Not Implemented 🚧", {
+        description:
+          "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
+      });
+    }
   };
-  const handleNavClick = (e: any) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
+
+  const handleNavClick = (href: string) => {
     const [path, id] = href.split("#");
+
     if (path === "/" || path === "") {
-      // Handles both '/#section' and '#section'
       router.push("/");
+
       setTimeout(() => {
         if (id) {
-          const targetElement = document.getElementById(id);
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
+          const el = document.getElementById(id);
+          el?.scrollIntoView({ behavior: "smooth" });
         } else {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }, 100);
+    }
+  };
+  const handleLinkClick = (e: any, link: any) => {
+    const href = link.href;
+
+    if (!href) return;
+
+    if (href === "/contact") {
+      e.preventDefault();
+      router.push("/contact");
+    } else if (href.startsWith("#") || href.includes("/#")) {
+      e.preventDefault();
+      handleNavClick(href);
+    } else if (href.startsWith("http")) {
+      e.preventDefault();
+      window.open(href, "_blank");
     } else {
-      handleSocialClick(); // For unimplemented links like 'Careers'
+      e.preventDefault();
+      toast.info("Feature Not Implemented 🚧");
     }
   };
 
@@ -55,22 +69,13 @@ const Footer = () => {
           {footerSections.map((section) => (
             <div key={section.title}>
               <p className="font-semibold text-white mb-6">{section.title}</p>
+
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      onClick={(e) => {
-                        if (link.href === "/contact") {
-                          e.preventDefault();
-                          router.push("/contact");
-                        } else if (link.href.includes("#")) {
-                          handleNavClick(e);
-                        } else {
-                          e.preventDefault();
-                          handleSocialClick();
-                        }
-                      }}
+                      onClick={(e) => handleLinkClick(e, link)}
                       className="text-gray-400 hover:text-accent-purple transition-colors duration-300"
                     >
                       {link.name}
@@ -87,7 +92,7 @@ const Footer = () => {
               {socialLinks.map((social) => (
                 <button
                   key={social.name}
-                  onClick={handleSocialClick}
+                  onClick={() => handleSocialClick(social)}
                   className="text-gray-400 hover:text-accent-purple transition-colors duration-300"
                 >
                   {social.icon}

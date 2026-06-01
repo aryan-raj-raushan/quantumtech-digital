@@ -75,7 +75,8 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://www.linkedin.com/company/quantumtech-digital",
-                // add Instagram / Twitter later if needed
+                "https://www.facebook.com/quantumtechdigital",
+                "https://www.instagram.com/quantumtech_digital/",
               ],
             }),
           }}

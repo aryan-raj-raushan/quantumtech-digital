@@ -275,6 +275,16 @@ export const footerSections = [
 ];
 export const socialLinks = [
   {
+    icon: <Linkedin size={20} />,
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/quantumtech-digital",
+  },
+  {
+    icon: <Instagram size={20} />,
+    name: "Instagram",
+    url: "https://www.instagram.com/quantumtech_digital/",
+  },
+  {
     icon: <Github size={20} />,
     name: "Github",
   },
@@ -282,16 +292,7 @@ export const socialLinks = [
     icon: <Twitter size={20} />,
     name: "Twitter",
   },
-  {
-    icon: <Linkedin size={20} />,
-    name: "Linkedin",
-  },
-  {
-    icon: <Instagram size={20} />,
-    name: "Instagram",
-  },
 ];
-
 export const testimonials = [
   {
     id: 1,

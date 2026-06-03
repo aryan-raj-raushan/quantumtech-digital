@@ -116,7 +116,7 @@ export default function ContactPage() {
                 <div>
                   <ContactInfoBlock
                     title="Our Studio"
-                    lines={["Garhpar, Biharsharif", "Nalanda, Br 803101"]}
+                    lines={["Delhi, India"]}
                     delay={0.5}
                   />
                 </div>

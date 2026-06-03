@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import Footer from "@/components/shared/Footer";
 import { domain_url } from "@/constants/api";
 import TierCityServices from "@/components/shared/TierCityLinks";
+import FloatingCTA from "@/components/common/FloatingCTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,7 +76,8 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://www.linkedin.com/company/quantumtech-digital",
-                // add Instagram / Twitter later if needed
+                "https://www.facebook.com/quantumtechdigital",
+                "https://www.instagram.com/quantumtech_digital/",
               ],
             }),
           }}
@@ -90,6 +92,7 @@ export default function RootLayout({
         <Toaster position="top-right" richColors />
         <TierCityServices />
         <Footer />
+        <FloatingCTA />
       </body>
     </html>
   );

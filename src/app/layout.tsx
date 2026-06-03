@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import Footer from "@/components/shared/Footer";
 import { domain_url } from "@/constants/api";
 import TierCityServices from "@/components/shared/TierCityLinks";
+import FloatingCTA from "@/components/common/FloatingCTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Toaster position="top-right" richColors />
         <TierCityServices />
         <Footer />
+        <FloatingCTA />
       </body>
     </html>
   );

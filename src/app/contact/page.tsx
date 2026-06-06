@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import type { Transition } from "framer-motion";
 
 /* Page animation */
@@ -22,10 +23,12 @@ const ContactInfoBlock = ({
   title,
   lines,
   delay,
+  isAddress = false,
 }: {
   title: string;
   lines: string[];
   delay: number;
+  isAddress?: boolean;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -33,16 +36,26 @@ const ContactInfoBlock = ({
     transition={{ duration: 0.5, delay }}
     className="mb-8"
   >
-    <h3 className="uppercase text-sm text-gray-400 mb-2 tracking-widest">
+    <h3 className="uppercase text-sm text-gray-400 mb-3 tracking-widest">
       {title}
     </h3>
 
-    <div className="space-y-1">
-      {lines.map((line, index) => (
-        <p key={index} className="text-lg text-gray-200">
-          {line}
-        </p>
-      ))}
+    <div className="space-y-2">
+      {lines.map((line, index) =>
+        isAddress ? (
+          <div key={index - 1} className="flex items-start gap-2 group">
+            <MapPin
+              size={15}
+              className="text-accent-purple mt-1 shrink-0 group-hover:scale-110 transition-transform duration-200"
+            />
+            <p className="text-base text-gray-300 leading-snug">{line}</p>
+          </div>
+        ) : (
+          <p key={index - 1} className="text-lg text-gray-200">
+            {line}
+          </p>
+        )
+      )}
     </div>
   </motion.div>
 );
@@ -103,21 +116,19 @@ export default function ContactPage() {
                     ]}
                     delay={0.4}
                   />
-                  {/* <ContactInfoBlock
-                    title="Partnerships"
-                    lines={[
-                      "partners@innovatesolutions.com",
-                      "+1 (555) 987-6543",
-                    ]}
-                    delay={0.6}
-                  /> */}
                 </div>
 
                 <div>
                   <ContactInfoBlock
-                    title="Our Studio"
-                    lines={["Delhi, India"]}
+                    title="Our Studios"
+                    lines={[
+                      "Noida Sector 62, Noida",
+                      "Prahalad Nagar, Ahmedabad, Gujarat",
+                      "Salt Lake, Kolkata",
+                      "Dak Bunglow Chowk, Patna",
+                    ]}
                     delay={0.5}
+                    isAddress
                   />
                 </div>
               </div>

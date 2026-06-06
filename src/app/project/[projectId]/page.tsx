@@ -78,7 +78,7 @@ export default function ProjectPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {project.images.gallery.slice(1, 3).map((img: any, i: number) => (
                 <div
-                  key={i}
+                  key={i - 1}
                   className="relative aspect-square rounded-2xl overflow-hidden"
                 >
                   <Image

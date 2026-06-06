@@ -38,15 +38,15 @@ const Footer = () => {
 
     if (!href) return;
 
-    if (href === "/contact") {
-      e.preventDefault();
-      router.push("/contact");
-    } else if (href.startsWith("#") || href.includes("/#")) {
+    if (href.startsWith("#") || href.includes("/#")) {
       e.preventDefault();
       handleNavClick(href);
     } else if (href.startsWith("http")) {
       e.preventDefault();
       window.open(href, "_blank");
+    } else if (href.startsWith("/")) {
+      e.preventDefault();
+      router.push(href);
     } else {
       e.preventDefault();
       toast.info("Feature Not Implemented 🚧");

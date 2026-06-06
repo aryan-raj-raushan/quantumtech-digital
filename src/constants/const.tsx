@@ -244,8 +244,9 @@ export const footerSections = [
     links: [
       { name: "Contact Us", href: "/contact" },
       { name: "Careers", href: "#" },
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Disclaimer", href: "/disclaimer" },
+      { name: "Terms of Service", href: "/terms-and-conditions" },
     ],
   },
   {

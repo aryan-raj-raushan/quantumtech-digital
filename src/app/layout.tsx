@@ -88,7 +88,9 @@ export default function RootLayout({
       >
         <Navbar />
         <CustomCursor />
-        {children}
+        <div className='bg-black w-full'>
+          {children}
+        </div>
         <Toaster position="top-right" richColors />
         <TierCityServices />
         <Footer />

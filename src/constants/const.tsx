@@ -233,46 +233,32 @@ export const footerSections = [
   {
     title: "Quick Links",
     links: [
-      {
-        name: "Home",
-        href: "/#",
-      },
-      {
-        name: "Services",
-        href: "/#services",
-      },
-      {
-        name: "Portfolio",
-        href: "/#portfolio",
-      },
-      {
-        name: "About",
-        href: "/#about",
-      },
+      { name: "Home", href: "/#" },
+      { name: "Services", href: "/#services" },
+      { name: "Portfolio", href: "/#portfolio" },
+      { name: "About", href: "/#about" },
     ],
   },
   {
     title: "Company",
     links: [
-      {
-        name: "Contact Us",
-        href: "/contact",
-      },
-      {
-        name: "Careers",
-        href: "#",
-      },
-      {
-        name: "Privacy Policy",
-        href: "#",
-      },
-      {
-        name: "Terms of Service",
-        href: "#",
-      },
+      { name: "Contact Us", href: "/contact" },
+      { name: "Careers", href: "#" },
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+    ],
+  },
+  {
+    title: "Our Offices",
+    links: [
+      { name: "Noida Sector 62, Noida", href: "#" },
+      { name: "Prahalad Nagar, Ahmedabad, Gujarat", href: "#" },
+      { name: "Salt Lake, Kolkata", href: "#" },
+      { name: "Dak Bunglow Chowk, Patna", href: "#" },
     ],
   },
 ];
+
 export const socialLinks = [
   {
     icon: <Linkedin size={20} />,

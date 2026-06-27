@@ -92,8 +92,29 @@ export default function ContactPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
               >
-                <a className="text-lg text-gray-300 hover:text-accent-purple transition">
+                <a
+                  href="https://www.linkedin.com/company/quantumtechdigital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-gray-300 hover:text-accent-purple transition"
+                >
                   LinkedIn
+                </a>
+                <a
+                  href="https://www.facebook.com/people/Quantumtech-Digital/61591651641277/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-gray-300 hover:text-accent-purple transition"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/quantumtech_digital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-gray-300 hover:text-accent-purple transition"
+                >
+                  Instagram
                 </a>
                 <a className="text-lg text-gray-300 hover:text-accent-purple transition">
                   Dribbble

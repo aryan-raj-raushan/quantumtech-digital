@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 
 export const projects = [
   {
@@ -262,9 +262,14 @@ export const footerSections = [
 
 export const socialLinks = [
   {
+    icon: <Facebook size={20} />,
+    name: "Facebook",
+    url: "https://www.facebook.com/people/Quantumtech-Digital/61591651641277/",
+  },
+  {
     icon: <Linkedin size={20} />,
     name: "LinkedIn",
-    url: "https://www.linkedin.com/company/quantumtech-digital",
+    url: "https://www.linkedin.com/company/quantumtechdigital/",
   },
   {
     icon: <Instagram size={20} />,
@@ -280,6 +285,7 @@ export const socialLinks = [
     name: "Twitter",
   },
 ];
+
 export const testimonials = [
   {
     id: 1,

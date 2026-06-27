@@ -3,6 +3,7 @@
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { footerSections, socialLinks } from "@/constants/const";
+import Image from "next/image";
 const Footer = () => {
   const router = useRouter();
 
@@ -58,6 +59,16 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
+            <div className="w-60 h-18 overflow-hidden relative flex items-center justify-center">
+              <Image
+                alt="Quantumtech Digital"
+                src={"/logo.png"}
+                width={150}
+                height={150}
+                priority
+                className="w-full"
+              />
+            </div>
             <p className="text-2xl font-bold text-white tracking-wider glow-effect">
               Quantumtech Digital
             </p>
@@ -65,7 +76,6 @@ const Footer = () => {
               Creative solutions that drive results.
             </p>
           </div>
-
           {footerSections.map((section) => (
             <div key={section.title}>
               <p className="font-semibold text-white mb-6">{section.title}</p>

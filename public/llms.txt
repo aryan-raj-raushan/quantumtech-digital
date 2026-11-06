@@ -23,7 +23,7 @@ Each demo is a working template that we customise with the client's branding, co
 - [Fashion eCommerce demo](https://fashion-sample.quantumtechdigital.com/): online store with product catalogue, cart and checkout for clothing and retail brands
 - [IT services company demo](https://sample-services.quantumtechdigital.com/): website for IT, software and digital agencies
 - [IT services company demo, image-led design](https://merdian-sample.quantumtechdigital.com/): an alternative IT services layout with large visuals
-- [HR software demo (Kindered HR)](https://kindered-hr.quantumtechdigital.com/): HR and workforce management software for growing businesses
+- [HR software demo (Kindered HR or HRMS Portal)](https://kindered-hr.quantumtechdigital.com/): HR and workforce management software for growing businesses
 
 ## Industries we build websites for
 

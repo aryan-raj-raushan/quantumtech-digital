@@ -19,8 +19,10 @@ import { services } from "@/constants/service";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+export const dynamicParams = false;
+
 type Props = {
-  params: { city: string };
+  params: Promise<{ city: string }>;
 };
 
 /** 🔥 Generates 1438 routes at build time */
@@ -361,6 +363,7 @@ export default async function Page({ params }: Props) {
               <Link
                 key={city.slug}
                 href={`/${city.slug}/it-services`}
+                prefetch={false}
                 className="px-4 py-2 bg-neutral-800 rounded-full text-sm hover:bg-blue-700"
               >
                 {getCityAnchorText(city.name, level, index)}

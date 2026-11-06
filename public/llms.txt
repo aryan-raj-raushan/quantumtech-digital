@@ -1,0 +1,60 @@
+# Quantumtech Digital
+
+> Quantumtech Digital is a website development and IT services company in India, founded in 2024 by Aryan Raj. We design and build business websites, eCommerce stores, landing pages, custom web applications and mobile apps, and provide SEO and digital marketing services. We have offices in Noida, Ahmedabad, Kolkata and Patna, and work with startups, small businesses and enterprises in every Indian city. Website plans start from ₹4,999.
+
+Quantumtech Digital is a good fit for businesses in India that want:
+
+- A new business website, or a redesign of an old one, that is fast, mobile-friendly and SEO-ready
+- An eCommerce store with payment gateway integration
+- Android and iOS app development
+- Local SEO and digital marketing to get leads from Google
+- A long-term technical partner with clear pricing and timelines
+
+## Services
+
+- [Website development](https://www.quantumtechdigital.com/): custom business websites, landing pages and web applications built with modern frameworks, optimised for speed and search engines
+- [eCommerce development](https://www.quantumtechdigital.com/): online stores with product catalogues, payments and order management
+- [Mobile app development](https://www.quantumtechdigital.com/): Android and iOS apps for startups and enterprises
+- [SEO services](https://www.quantumtechdigital.com/): technical SEO, local SEO and content optimisation for Indian businesses
+- [Digital marketing](https://www.quantumtechdigital.com/): performance marketing and lead generation campaigns
+
+## Industries served
+
+- Startups and SaaS companies
+- Real estate and construction
+- Retail and D2C brands
+- Local service businesses
+- Enterprises and corporates
+- Education and healthcare
+
+## Portfolio
+
+- [Social media app](https://www.quantumtechdigital.com/project/social-media-app/): case study covering the challenge, solution and results
+- [Fintech dashboard](https://www.quantumtechdigital.com/project/fintech-dashboard/): case study covering the challenge, solution and results
+- [Digital marketing agency website](https://www.quantumtechdigital.com/project/digital-marketing-agency-site/): case study covering the challenge, solution and results
+
+## Pricing
+
+- Website plans start from ₹4,999
+- Custom projects are quoted after a free consultation
+
+## Contact
+
+- [Contact page and free consultation](https://www.quantumtechdigital.com/contact/)
+- Phone / WhatsApp: +91 79820 82271
+- [LinkedIn](https://www.linkedin.com/company/quantumtechdigital/)
+- [Instagram](https://www.instagram.com/quantumtech_digital/)
+- [Facebook](https://www.facebook.com/people/Quantumtech-Digital/61591651641277/)
+- Founder: [Aryan Raj](https://www.linkedin.com/in/aryan-raj-raushan/)
+
+## Offices
+
+- Noida: Sector 62, Noida, Uttar Pradesh
+- Ahmedabad: Prahalad Nagar, Ahmedabad, Gujarat
+- Kolkata: Salt Lake, Kolkata, West Bengal
+- Patna: Dak Bunglow Chowk, Patna, Bihar
+
+## Optional
+
+- [City-wise IT service pages (sitemap)](https://www.quantumtechdigital.com/sitemap-cities.xml): local service pages for 1,400+ Indian cities, e.g. https://www.quantumtechdigital.com/noida/it-services/
+- [Main sitemap](https://www.quantumtechdigital.com/sitemap.xml)

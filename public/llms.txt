@@ -1,0 +1,96 @@
+# Quantumtech Digital
+
+> Quantumtech Digital is a website development and IT services company in India, founded in 2024 by Aryan Raj. We build websites, eCommerce stores, mobile apps and business software for small and medium businesses, with a focus on Tier 2 and Tier 3 cities. We keep ready-to-customise website templates for many industries, each with a live demo, so a business owner can see a working site for their industry before ordering and get theirs delivered faster. We have offices in Noida, Ahmedabad, Kolkata and Patna, and provide online support to businesses in every Indian city. Website plans start from ₹4,999.
+
+Quantumtech Digital is a good fit for Indian businesses that:
+
+- Earn well offline but still run on phone calls, WhatsApp, walk-ins, notebooks or Instagram, and want more customers online
+- Want to see a live demo website for their industry before paying
+- Need a fast, mobile-friendly website with WhatsApp contact, Google Maps and simple enquiry or booking forms
+- Want Hindi-friendly content for customers in smaller cities
+- Need business software later, such as appointment booking, HRMS, inventory or membership management
+- Want one partner for the website, Google Business Profile, local SEO, hosting and ongoing maintenance
+
+## Live demo websites
+
+Each demo is a working template that we customise with the client's branding, content, pricing and features.
+
+- [Healthcare and clinics demo](https://healthcare-sample.quantumtechdigital.com/): doctor profiles, treatments, OPD timings, appointment booking and WhatsApp enquiries, for clinics, dentists, diagnostic labs and small hospitals
+- [Salon and beauty demo](https://salon-sample.quantumtechdigital.com/): services, price list, gallery and appointment booking for salons, spas and beauty parlours
+- [Gym and fitness demo](https://gym.quantumtechdigital.com/): membership plans, trainers, class schedules and trial bookings for gyms, yoga studios and fitness trainers
+- [Gym and fitness demo, second design](https://gym-sample.quantumtechdigital.com/): an alternative layout for gyms and fitness centres
+- [Restaurant demo](https://restaurant-sample.quantumtechdigital.com/): menu, gallery, table reservations and WhatsApp ordering for restaurants, cafes and cloud kitchens
+- [Fashion eCommerce demo](https://fashion-sample.quantumtechdigital.com/): online store with product catalogue, cart and checkout for clothing and retail brands
+- [IT services company demo](https://sample-services.quantumtechdigital.com/): website for IT, software and digital agencies
+- [IT services company demo, image-led design](https://merdian-sample.quantumtechdigital.com/): an alternative IT services layout with large visuals
+- [HR software demo (Kindered HR)](https://kindered-hr.quantumtechdigital.com/): HR and workforce management software for growing businesses
+
+## Industries we build websites for
+
+- Clinics, dentists, physiotherapists, eye clinics and diagnostic labs
+- Coaching centres, tuition institutes, computer training and spoken English classes
+- Gyms, yoga studios, dance studios and personal trainers
+- Salons, spas and beauty parlours
+- Restaurants, cafes, tiffin services and caterers
+- Bakeries, cake shops and sweet shops
+- Car and bike service centres, garages and detailing studios
+- Property dealers, builders and PG owners
+- Interior designers, architects and contractors
+- Wedding photographers, event planners, decorators and banquet halls
+- Mobile, laptop and electronics shops and repair centres
+- Travel agencies, tour operators and taxi services
+- Fashion, clothing and retail stores (eCommerce)
+- Laundry and dry cleaning
+- Hardware, tiles and building material dealers
+- CA firms, tax consultants and legal professionals
+- Furniture and home furnishing stores
+- Preschools, daycares and activity centres
+- Dairy, organic food and local producers
+- Pest control and deep-cleaning companies
+- Veterinary clinics and pet grooming
+- Courier, transport and logistics companies
+- IT services, software companies and digital agencies
+
+## Services
+
+- Business websites: service catalogue, gallery, SEO, enquiry forms, WhatsApp chat, Google Maps and optional appointment booking
+- eCommerce stores: product catalogues, payments and order management
+- Business software and web applications: booking systems, HRMS, inventory management, membership management, admin dashboards and local delivery systems
+- Mobile app development: Android and iOS apps
+- Local SEO and Google Business Profile setup
+- Digital marketing and lead generation
+- Domain, hosting, maintenance and ongoing support
+
+## Portfolio
+
+- [Social media app](https://www.quantumtechdigital.com/project/social-media-app/): case study covering the challenge, solution and results
+- [Fintech dashboard](https://www.quantumtechdigital.com/project/fintech-dashboard/): case study covering the challenge, solution and results
+- [Digital marketing agency website](https://www.quantumtechdigital.com/project/digital-marketing-agency-site/): case study covering the challenge, solution and results
+
+## Pricing
+
+- Website plans start from ₹4,999
+- Industry templates are customised with the client's branding, content and features
+- Software, eCommerce and custom projects are quoted after a free consultation
+
+## Contact
+
+- [Contact page and free consultation](https://www.quantumtechdigital.com/contact/)
+- Phone / WhatsApp: +91 79820 82271
+- [LinkedIn](https://www.linkedin.com/company/quantumtechdigital/)
+- [Instagram](https://www.instagram.com/quantumtech_digital/)
+- [Facebook](https://www.facebook.com/people/Quantumtech-Digital/61591651641277/)
+- Founder: [Aryan Raj](https://www.linkedin.com/in/aryan-raj-raushan/)
+
+## Offices
+
+- Noida: Sector 62, Noida, Uttar Pradesh
+- Ahmedabad: Prahalad Nagar, Ahmedabad, Gujarat
+- Kolkata: Salt Lake, Kolkata, West Bengal
+- Patna: Dak Bunglow Chowk, Patna, Bihar
+- Online support for businesses in every Indian city
+
+## Optional
+
+- [City-wise IT service pages (sitemap)](https://www.quantumtechdigital.com/sitemap-cities.xml): local service pages for 1,400+ Indian cities, e.g. https://www.quantumtechdigital.com/noida/it-services/
+- [Main sitemap](https://www.quantumtechdigital.com/sitemap.xml)

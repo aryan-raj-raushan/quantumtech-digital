@@ -30,6 +30,7 @@ const TierCityServices = () => {
                     <Link
                       href={`/${city.slug}/it-services`}
                       className="text-sm text-gray-400 hover:text-accent-purple transition-colors"
+                      prefetch={false}
                     >
                       {getFooterAnchor(service, city.name)}
                     </Link>

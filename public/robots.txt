@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
-
 Disallow: /privacy-policy
-Disallow: /terms-of-service
+Disallow: /terms-and-conditions
+
 
 Sitemap: https://www.quantumtechdigital.com/sitemap.xml
+Sitemap: https://www.quantumtechdigital.com/sitemap-cities.xml
